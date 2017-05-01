@@ -2,7 +2,10 @@
 
 // Public API
 Route::group(
-    ['domain' => 'api.' . config('gzero.domain'), 'prefix' => 'v1'],
+    [
+        'prefix'     => '_hidden',
+        'middleware' => ['web']
+    ],
     function ($router) {
         /** @var \Illuminate\Routing\Router $router */
         $router->get('vanilla-sso', ['uses' => 'Gzero\Vanilla\VanillaController@index']);
