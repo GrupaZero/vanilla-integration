@@ -40,18 +40,8 @@ class ServiceProvider extends SP {
                 $configPath => config_path('vanilla-integration.php'),
             ]
         );
+        $this->loadRoutesFrom(__DIR__ . '/../../../routes/routes.php');
         $this->registerHelpers();
-        $this->registerRoutes();
-    }
-
-    /**
-     * Add additional file to store routes
-     *
-     * @return void
-     */
-    protected function registerRoutes()
-    {
-        require __DIR__ . '/../../routes.php';
     }
 
     /**
